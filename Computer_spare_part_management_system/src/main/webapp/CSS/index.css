@@ -1,0 +1,35 @@
+
+/* #nav-bar{
+    background-color: black;
+} */
+
+#username-btn{
+    box-shadow: 4px 4px 4px grey;
+    transition: .5s all;
+    border-radius: 20px;
+    
+}
+
+
+.welcome-msg{
+    
+    color:  #4b4a48;
+    font-size: 80px;
+    font-weight: bolder;
+    
+}
+
+#slider{
+     margin-left: 400px;
+     background-color: aqua;
+}
+
+.search-bar{
+    margin-left: 80px;
+}
+
+.carousel-item{
+    background-color:#000 ;
+    height: 400px;
+}
+

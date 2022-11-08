@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200&display=swap');
+
+
+
+
+.row1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+#c4{
+    margin-right: 50px;
+}
+
+#c4 > .rows >.social-bar{
+    display: flex;
+    /* justify-content: center; */
+}
+
+#c4 > .rows > .social-bar > a > i{
+    font-size: 40px;
+    color: black;
+    margin: 15px;
+    transition: .2s all ease-in;
+}
+
+#c4 > .rows > .social-bar > a:hover > i
+{
+    color:  #8dc53e;
+    background-size: 200% 100%;
+    background-position:left bottom;
+    transform: translateY(-5px);
+}
+
+.footer-topic{
+    text-decoration: none;
+}
+.slogan{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: none;
+    opacity: 0.8;
+    font-weight: 700;
+    user-select: none;
+    transition: .4s all ease;
+    margin: 10px;
+    text-align: center;
+    text-justify: inter-word;
+}
+
+.slogan:hover{
+    margin-top: 20px;
+    cursor: auto;
+}
+
+.mail-wrapper>form > input{
+    width: 228px;
+    height: 30px;
+    border-style: none;
+    border-bottom: 2px solid black;
+    margin: 0 -15px;
+    outline: none;
+    padding:25px 20px;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.mail-wrapper > input::placeholder{
+    color: white;
+    opacity: 0.9;
+}
+
+
