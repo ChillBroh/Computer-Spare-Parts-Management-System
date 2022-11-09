@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=\, initial-scale=1.0" />
     <title>NextGen</title>
     <!--add title bar icon-->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
     <!--Bootstrap css-->
     <link
@@ -25,8 +25,8 @@
     />
 
     <!--My CSS file -->
-    <link rel="stylesheet" href="./CSS/index.css" />
-    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
 
     <!--Icons-->
     <link
@@ -118,21 +118,21 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="./images/slider 1.png"
+              src="images/slider 1.png"
               class="d-block w-50 h-100"
               alt=""
             />
           </div>
           <div class="carousel-item">
             <img
-              src="./images/slider 2.jpg"
+              src="images/slider 2.jpg"
               class="d-block w-50 h-100"
               alt=""
             />
           </div>
           <div class="carousel-item">
             <img
-              src="./images/slider 3.jpg"
+              src="images/slider 3.jpg"
               class="d-block w-50 h-100"
               alt=""
             />
@@ -215,7 +215,7 @@
                   <div class="uk-grid-collapse" data-uk-grid>
                     <div class="uk-width-1-2@s">
                       <img
-                        src="./images/laptop/MSI GL65 LEOPARD 10SER.png"
+                        src="images/laptop/MSI GL65 LEOPARD 10SER.png"
                         alt="Slide"
                       />
                     </div>
@@ -258,7 +258,7 @@
                   <div class="uk-grid-collapse" data-uk-grid>
                     <div class="uk-width-1-2@s">
                       <img
-                        src="./images/laptop/Asus Zenbook Pro Duo UX582.png"
+                        src="images/laptop/Asus Zenbook Pro Duo UX582.png"
                         alt="Slide"
                       />
                     </div>
@@ -354,7 +354,7 @@
             >
               <div class="uk-text-center uk-text-secondary uk-padding-medium">
                 <img
-                  src="./images/laptop/Asus ROG Zephyrus Duo 15 SE GX551QM.png"
+                  src="images/laptop/Asus ROG Zephyrus Duo 15 SE GX551QM.png"
                   alt="Icon"
                   data-uk-svg
                 />
@@ -373,7 +373,7 @@
             >
               <div class="uk-text-center uk-padding-medium">
                 <img
-                  src="./images/mouse/SteelSeries Rival 3 Wireless Gaming Mouse.png"
+                  src="images/mouse/SteelSeries Rival 3 Wireless Gaming Mouse.png"
                   alt="Icon"
                   data-uk-svg
                 />
@@ -392,7 +392,7 @@
             >
               <div class="uk-text-center uk-text-secondary uk-padding-medium">
                 <img
-                  src="./images/keyboard/Steelseries Apex 3 Whisper Quiet Gaming Keyboard.png"
+                  src="images/keyboard/Steelseries Apex 3 Whisper Quiet Gaming Keyboard.png"
                   alt="Icon"
                   data-uk-svg
                 />
@@ -410,7 +410,7 @@
               class="uk-card uk-card-small uk-card-body uk-border-medium uk-flex uk-flex-column"
             >
               <div class="uk-text-center uk-text-secondary uk-padding-medium">
-                <img src="./images/msi headphone.jpg" alt="Icon" data-uk-svg />
+                <img src="images/msi headphone.jpg" alt="Icon" data-uk-svg />
               </div>
               <h3
                 class="uk-margin-remove uk-text-uppercase uk-h5 uk-letter-spacing-small"
@@ -424,7 +424,7 @@
               class="uk-card uk-card-small uk-card-body uk-border-medium uk-flex uk-flex-column"
             >
               <div class="uk-text-center uk-text-secondary uk-padding-medium">
-                <img src="./images/gaming chair.jpg" alt="Icon" data-uk-svg />
+                <img src="images/gaming chair.jpg" alt="Icon" data-uk-svg />
               </div>
               <h3
                 class="uk-margin-remove uk-text-uppercase uk-h5 uk-letter-spacing-small"

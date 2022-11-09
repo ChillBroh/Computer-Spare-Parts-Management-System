@@ -1,6 +1,7 @@
 package com.customer;
 
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -27,6 +28,27 @@ public class CustomerDBUtill {
 				isSuccess = false;
 			}
 			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	public boolean insertUser(int id, String fname,String lname, String username, String email, String phone, String password,String type) {
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			String sql = "insert into user values (0,'"+fname+"','"+lname+"','"+username+"','"+email+"','"+phone+"','"+password+"','"+type+"')";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -29,4 +29,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerInsertServlet</display-name>
+    <servlet-name>CustomerInsertServlet</servlet-name>
+    <servlet-class>com.customer.CustomerInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerInsertServlet</servlet-name>
+    <url-pattern>/CustomerInsertServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
