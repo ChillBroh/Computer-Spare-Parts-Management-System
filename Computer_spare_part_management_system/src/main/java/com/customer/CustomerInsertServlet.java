@@ -23,15 +23,28 @@ public class CustomerInsertServlet extends HttpServlet {
 		
 		CustomerDBUtill cusdb = new CustomerDBUtill();	
 		
-		boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, email, password,"user");
-		
-		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-			dis.forward(request, response);
+		boolean check = cusdb.userAlreadyExsist(username);
+		if(check == false) {
+			
+			boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, email, password,"user");
+				
+				if(isTrue == true) {
+					RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+					dis.forward(request, response);
+				}else {
+					RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+					dis.forward(request, response);
+				}
+			
 		}else {
-			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			request.setAttribute("check", "True");
+			RequestDispatcher dis = request.getRequestDispatcher("signup.jsp");
 			dis.forward(request, response);
 		}
+			
+			
+	}
+		
 	}
 
-}
+

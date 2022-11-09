@@ -55,4 +55,60 @@ public class CustomerDBUtill {
 		
 		return isSuccess;
 	}
+	
+	public boolean userAlreadyExsist(String username){
+		boolean userStatus = false;
+		String uname;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "select username from user";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				uname = rs.getString("username");
+				
+				
+				if(uname.equals(username)) {
+					userStatus = true;
+					
+				}
+			}
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		System.out.println(userStatus);
+		return userStatus;
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

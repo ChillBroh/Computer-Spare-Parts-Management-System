@@ -42,6 +42,7 @@
   </head>
 
   <body>
+  <input type="hidden" id="check" value="<%=request.getAttribute("check")%>">
    
     <div
       class="wrapper"
@@ -240,7 +241,12 @@
         }
         
       }
+      var userexist = document.getElementById("check").value;
+      if(userexist == "True"){
+    	  swal("sorry","Username has already exists","error");
+      }
     </script>
+    
 
   </body>
 
