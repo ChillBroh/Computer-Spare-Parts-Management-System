@@ -242,7 +242,7 @@
         
       }
       var userexist = document.getElementById("check").value;
-      if(userexist == "True"){
+      if(userexist == "True" ){
     	  swal("sorry","Username has already exists","error");
       }
     </script>
