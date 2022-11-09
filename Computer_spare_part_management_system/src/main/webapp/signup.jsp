@@ -6,8 +6,10 @@
     <meta charset="utf-8" />
     <title>Signup Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
     <!--add title bar icon-->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    
     <!--Bootstrap css-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -40,7 +42,7 @@
   </head>
 
   <body>
-    <!--signup form end-->
+   
     <div
       class="wrapper"
       style="
@@ -52,7 +54,7 @@
         <div class="image-holder">
           <img src="images/laptop/Asus ROG Zephyrus G14 GA401QM.png" alt="" />
         </div>
-        <form action="">
+        <form action="signup" method="post">
           <h3 class="text-start">Sign Up</h3>
           <div class="form-group">
             <input
@@ -105,6 +107,8 @@
               placeholder="Password"
               class="form-control"
               name="password"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             />
             <i class="fas fa-unlock-alt mr-3"></i>
           </div>
@@ -211,5 +215,5 @@
     </footer>
     <!--footer end-->
   </body>
-  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>

@@ -652,8 +652,12 @@
                     required
                   >
                     <option>Reason for contacting us</option>
-                    <option>Services Matter</option>
+                    <option>Pre-Order an item</option>
+                    <option>Warrenty issue</option>
+                    <option>Services issue</option>
+                     <option>To join our team</option>
                     <option>Other</option>
+                   
                   </select>
                 </div>
                 <div class="uk-width-1-1">
