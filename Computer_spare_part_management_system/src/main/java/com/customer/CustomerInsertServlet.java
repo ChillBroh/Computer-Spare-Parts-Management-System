@@ -23,7 +23,7 @@ public class CustomerInsertServlet extends HttpServlet {
 		
 		CustomerDBUtill cusdb = new CustomerDBUtill();	
 		
-		boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, email, password, password);
+		boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, email, password,"user");
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");

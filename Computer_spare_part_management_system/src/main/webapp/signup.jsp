@@ -54,7 +54,7 @@
         <div class="image-holder">
           <img src="images/laptop/Asus ROG Zephyrus G14 GA401QM.png" alt="" />
         </div>
-        <form action="signup" method="post">
+        <form action="signup" method="post" id="signupform">
           <h3 class="text-start">Sign Up</h3>
           <div class="form-group">
             <input
@@ -62,6 +62,7 @@
               placeholder="First Name"
               class="form-control"
               name="fname"
+              id="fname"
               required
             />
             <input
@@ -69,6 +70,7 @@
               placeholder="Last Name"
               class="form-control"
               name="lname"
+              id="lname"
               required
             />
           </div>
@@ -78,6 +80,7 @@
               placeholder="Username"
               class="form-control"
               name="username"
+              id="username"
               required
             />
             <i class="fas fa-user mr-3"></i>
@@ -88,6 +91,7 @@
               placeholder="Email Address"
               class="form-control"
               name="email"
+              id="email"
             />
             <i class="fas fa-envelope mr-3"></i>
           </div>
@@ -97,6 +101,7 @@
               placeholder="phone"
               class="form-control"
               name="phone"
+              id="phone"
               required
             />
             <i class="fas fa-phone mr-3"></i>
@@ -107,8 +112,10 @@
               placeholder="Password"
               class="form-control"
               name="password"
-               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              id="pw1"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              
             />
             <i class="fas fa-unlock-alt mr-3"></i>
           </div>
@@ -118,11 +125,12 @@
               placeholder="Confirm Password"
               class="form-control"
               name="password"
+              id="pw2"
               required
             />
             <i class="fas fa-unlock-alt"></i>
           </div>
-          <button type="submit" name="reg-btn">
+          <button  name="reg-btn" id="reg-btn" onclick="return password_check()">
             Register
             <i class="fas fa-arrow-right"></i>
           </button>
@@ -214,11 +222,26 @@
       </div>
     </footer>
     <!--footer end-->
-      <script
+        <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      function password_check() {
+        var pw1 = document.getElementById("pw1").value;
+        var pw2 = document.getElementById("pw2").value;
+        if (pw1 != pw2) {
+          
+          swal("sorry", "password mismatch", "error");
+          return false;
+        }
+        
+      }
+    </script>
+
   </body>
 
 </html>
