@@ -29,4 +29,44 @@
     <servlet-name>DeleteDetailsServlet</servlet-name>
     <url-pattern>/deletedetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>test</display-name>
+    <servlet-name>test</servlet-name>
+    <servlet-class>Servlet.test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContactusServlet</display-name>
+    <servlet-name>ContactusServlet</servlet-name>
+    <servlet-class>Servlet.ContactusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactusServlet</servlet-name>
+    <url-pattern>/ContactusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Contact</display-name>
+    <servlet-name>Contact</servlet-name>
+    <servlet-class>com.customer.Contact</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Contact</servlet-name>
+    <url-pattern>/Contact</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContactServlet</display-name>
+    <servlet-name>ContactServlet</servlet-name>
+    <servlet-class>com.customer.ContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactServlet</servlet-name>
+    <url-pattern>/ContactServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

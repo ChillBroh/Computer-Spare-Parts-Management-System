@@ -42,6 +42,8 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
+  
+   <input type="hidden" id="contactform" value="<%=request.getAttribute("consuccess")%>">
     <!--header start-->
     <header id="header">
       <!--nav bar starts-->
@@ -773,6 +775,18 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    
+      <script type="text/javascript">
+      var userexist = document.getElementById("contactform").value;
+      if (userexist == "True") {
+        swal("Thank You", "We Will Contact You As Soon As Possible", "success");
+      }
+      else{
+    	  swal("Sorry", "There was an Error While Submitting Your Form", "error");
+    	  
+      }
+    </script>
+    
   </body>
 </html>
     

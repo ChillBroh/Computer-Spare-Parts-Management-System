@@ -11,7 +11,7 @@ import java.io.IOException;
 
 
 @WebServlet("/cusinsert")
-public class ContactusServlet extends HttpServlet {
+public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -29,12 +29,14 @@ public class ContactusServlet extends HttpServlet {
 		boolean isTrue = cusdb.insertContactus(name, email, phone, reason, message);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			request.setAttribute("consuccess", "True");
+			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 		
 		}
 		else {
-			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			request.setAttribute("consuccess", "False");
+			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 		}
 	}

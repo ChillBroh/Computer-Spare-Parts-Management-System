@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 @WebServlet("/signup")
@@ -20,7 +22,8 @@ public class CustomerInsertServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String phone = request.getParameter("phone");
-		
+		HttpSession session = request.getSession();
+
 		
 		CustomerDBUtill cusdb = new CustomerDBUtill();	
 		
@@ -32,6 +35,11 @@ public class CustomerInsertServlet extends HttpServlet {
 				if(isTrue == true) {
 					RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 					dis.forward(request, response);
+					session.setAttribute("fname", fname);
+					session.setAttribute("lname", lname);
+					session.setAttribute("email", email);
+					session.setAttribute("phone", phone);
+					
 				}else {
 					RequestDispatcher dis = request.getRequestDispatcher("signup.jsp");
 					dis.forward(request, response);
