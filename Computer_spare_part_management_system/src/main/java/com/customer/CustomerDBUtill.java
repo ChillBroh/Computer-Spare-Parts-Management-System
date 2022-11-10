@@ -147,7 +147,7 @@ public class CustomerDBUtill {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 
-			String sql = "Select * from user where username ='" + username + "' and password = '" + password + "' ";
+			String sql = "Select * from user where username ='"+username+"' and password = '"+password+"' ";
 
 			rs = stmt.executeQuery(sql);
 
@@ -160,7 +160,7 @@ public class CustomerDBUtill {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+System.out.println(isSuccess);
 		return isSuccess;
 	}
 

@@ -30,10 +30,10 @@ public class CustomerInsertServlet extends HttpServlet {
 			boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, phone, password,"user");
 				
 				if(isTrue == true) {
-					RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+					RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 					dis.forward(request, response);
 				}else {
-					RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+					RequestDispatcher dis = request.getRequestDispatcher("signup.jsp");
 					dis.forward(request, response);
 				}
 			

@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class loginservlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		
+		HttpSession session = request.getSession();
 
 		
 		String username = request.getParameter("username");
@@ -25,11 +27,12 @@ public class loginservlet extends HttpServlet {
 		
 		CustomerDBUtill cusdb = new CustomerDBUtill();
 		boolean isTrue = cusdb.validatenew(username, password);
-		
+		System.out.println(isTrue);
 		if(isTrue == true) {
 			
 				List<Customer>  cusDetails = cusdb.validate(username, password); 
 				request.setAttribute("cusDetails", cusDetails);
+				session.setAttribute("username", username);
 				RequestDispatcher dis = request.getRequestDispatcher("userprofile.jsp");
 				dis.forward(request, response);
 			
@@ -38,6 +41,7 @@ public class loginservlet extends HttpServlet {
 			request.setAttribute("checkLogin", "False");
 			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 			dis.forward(request, response);
+		
 		}
 	}
 

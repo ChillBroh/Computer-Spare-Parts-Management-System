@@ -75,7 +75,7 @@
                   data-uk-scrollspy-nav="closest: li"
                 >
                   <li>
-                    <a href="#header">Home</a>
+                    <a href="index.jsp">Home</a>
                   </li>
                   <li>
                     <a href="#projects">Products</a>
@@ -83,9 +83,9 @@
                   <li>
                     <a href="#about">About</a>
                   </li>
-                  <li><a href="#team">Feedbacks</a></li>
+                  <li><a href="#">Feedbacks</a></li>
                   <li>
-                    <a href="#feedback">FAQ</a>
+                    <a href="#">FAQ</a>
                   </li>
                   <li>
                     <a href="#contact">Contact</a>
