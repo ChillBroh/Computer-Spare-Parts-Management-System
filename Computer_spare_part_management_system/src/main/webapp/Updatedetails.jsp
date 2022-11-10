@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,60 +58,19 @@
                 />
                 
                 
-                <c:forEach var="cus" items="${cusDetails}"> 
-	
-					<c:set var="id" value="${cus.id}"/>
-					<c:set var="fname" value="${cus.fname}"/>
-					<c:set var="lname" value="${cus.lname}"/>
-					<c:set var="email" value="${cus.email}"/>
-					<c:set var="username" value="${cus.username}"/>
-					<c:set var="phone" value="${cus.phone}"/>
-					<c:set var="type" value="${cus.type}"/>
-					
-	
-	
-				
-		</c:forEach>
+              
                 
                 
                 
                 
-                
+                <h5 class="my-3">John Smith</h5>
+                <p class="text-muted mb-1">Full Stack Developer</p>
+                <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                <div class="d-flex justify-content-center mb-2">
                
-                  <!-- <button type="button" class="btn btn-primary">
-                    Update Account
-                  </button> -->
-                  <c:url value="Updatedetails.jsp" var="cusupdate">
-	
-						<c:param name="id" value="${id}"/>
-						<c:param name="email" value="${email}"/>
-						<c:param name="phone" value="${phone}"/>
-						<c:param name="username" value="${username}"/>
-						<c:param name="fname" value="${fname}"/>
-						<c:param name="lname" value="${lname}"/>
-						<c:param name="type" value="${type}"/>
-					</c:url>
-                  <a href="${cusupdate}">
-					<input type="button" name="update-btn" value="Update My data" class="btn btn-primary">
-					</a>
-                  <!-- <button type="button" class="btn btn-danger ms-1">
-                    Delete Account
-                  </button> -->
-                  
-                  <c:url value="deletecustomer.jsp" var="cusdelete">
-	
-					<c:param name="id" value="${id}"/>
-						<c:param name="email" value="${email}"/>
-						<c:param name="phone" value="${phone}"/>
-						<c:param name="username" value="${username}"/>
-						<c:param name="fname" value="${fname}"/>
-						<c:param name="lname" value="${lname}"/>
-						<c:param name="type" value="${type}"/>
-			</c:url>
-	
-			<a href="${cusdelete}">
-			<input type="button" name="del-btn" value="Delete My Account" class="btn btn-danger">
-			</a>
+                
+             
+   
                   
                 </div>
               </div>
@@ -122,6 +80,20 @@
             <div class="card mb-4">
               <div class="card-body">
                 
+               <form action="updatedetails" method="post" >
+               <%
+               String id = request.getParameter("id");
+               String fname = request.getParameter("fname");
+             	 String lname = request.getParameter("lname");
+             	 String uname = request.getParameter("username");
+             	 String email = request.getParameter("email");
+             	 String phone = request.getParameter("phone");
+             	 String type = request.getParameter("type");
+               
+             
+               
+               %>
+               
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-sm-3">
@@ -131,8 +103,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="${fname}"
-                          readonly
+                          
+                          value = "<%=fname %>"
                           name="fname"
                         />
                       </div>
@@ -140,8 +112,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="${lname}"
-                          readonly
+                       
+                          value = "<%=lname %>"
                           name="lname"
                         />
                       </div>
@@ -157,10 +129,10 @@
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="${email}"
-                         readonly
+                        
+                         value = "<%=email %>"
                           name="email"
-                          readonly
+                        
                         />
                       </div>
                     </div>
@@ -175,8 +147,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="${username}"
-                          readonly
+                          
+                          value = "<%=uname %>"
                           name="uname"
                         />
                       </div>
@@ -192,9 +164,9 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="${phone}"
+                          
                           name="phone"
-                          readonly
+                          value = "<%=phone %>"
                         />
                       </div>
                       
@@ -210,15 +182,19 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="${type}"
+                         
                           name="type"
-                        readonly
+                        value = "<%=type %>"
                         />
                       </div>
                      
                       </div>
                     </div>
                   </div>
+                  <button type="submit" class="btn btn-primary">
+                    Update Account
+                  </button>
+               </form>
                   
               
               </div>
