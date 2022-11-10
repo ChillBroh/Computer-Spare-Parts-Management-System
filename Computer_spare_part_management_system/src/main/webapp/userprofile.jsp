@@ -69,15 +69,7 @@
 					<c:set var="phone" value="${cus.phone}"/>
 					<c:set var="type" value="${cus.type}"/>
 					
-					
-					
-					
-					<br><br>
-					<a href="${cusupdate}">
-					<input type="button" name="update-btn" value="Update My data">
-					</a>	
-					<br>
-					<br>
+	
 	
 				
 		</c:forEach>
@@ -102,7 +94,7 @@
 						<c:param name="password" value="${password}"/>
 					</c:url>
                   <a href="${cusupdate}">
-					<input type="button" name="update-btn" value="Update My data">
+					<input type="button" name="update-btn" value="Update My data" class="btn btn-primary">
 					</a>
                   <!-- <button type="button" class="btn btn-danger ms-1">
                     Delete Account
@@ -118,7 +110,7 @@
 			</c:url>
 	
 			<a href="${cusdelete}">
-			<input type="button" name="del-btn" value="Delete My Account">
+			<input type="button" name="del-btn" value="Delete My Account" class="btn btn-danger">
 			</a>
                   
                 </div>
