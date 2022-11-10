@@ -38,16 +38,17 @@ public class UpdateUserServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			RequestDispatcher dis = request.getRequestDispatcher("useraccount.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("userprofile.jsp");
 			dis.forward(request, response);
 		}
 		else {
-			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			
+			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 		}
 		
 	}
 
-	}
-
 }
+
+

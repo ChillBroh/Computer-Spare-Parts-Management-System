@@ -93,7 +93,7 @@ public class CustomerDBUtill {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "update customer set fname = '"+fname+", lname = '"+lname+"',  Username = '"+username+"', email= '"+email+"', phone = '"+phone+"', where id= '"+id+"'";
+			String sql = "update user set fname = '"+fname+", lname = '"+lname+"',  Username = '"+username+"', email= '"+email+"', phone = '"+phone+"', where id= '"+id+"'";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {
@@ -116,13 +116,99 @@ public class CustomerDBUtill {
 		ArrayList<Customer> cus = new ArrayList<>();
 		
 		try {
-			con = 
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from user where id = '"+cid+"'";
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				int uid = rs.getInt(1);
+				String fname = rs.getString(2);
+				String lname = rs.getString(3);
+				String uname = rs.getString(4);
+				String email = rs.getString(5);
+				String phone = rs.getString(6);
+				String pass = rs.getString(7);
+				String type = rs.getString(8);
+				
+				Customer c = new Customer(uid, fname, lname, uname, email, phone, pass, type);
+				cus.add(c);
+				
+				
+				
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
 		return cus;
+	}
+	
+	public boolean validatenew(String username, String password) {
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "Select * from user where username ='"+username+"' and password = '"+password+"' ";
+			
+			rs = stmt.executeQuery(sql);
+	
+		
+			if(rs.next()) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return isSuccess;
+	}
+	
+public List<Customer> validate(String userName, String password){
+		
+		ArrayList <Customer> cus = new ArrayList<>();
+	
+	
+		//validate
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "Select * from user where username ='"+userName+"' and password = '"+password+"' ";
+			
+			rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				int uid = rs.getInt(1);
+				String fname = rs.getString(2);
+				String lname = rs.getString(3);
+				String uname = rs.getString(4);
+				String email = rs.getString(5);
+				String phone = rs.getString(6);
+				String pass = rs.getString(7);
+				String type = rs.getString(8);
+				
+				Customer c = new Customer(uid, fname, lname, uname, email, phone, pass, type);
+				cus.add(c);
+				
+				
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cus;
+		
 	}
 }
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,6 +57,51 @@
                   class="rounded-circle img-fluid"
                   style="width: 150px"
                 />
+                
+                
+                <c:forEach var="cus" items="${cusDetails}"> 
+	
+					<c:set var="id" value="${cus.id}"/>
+					<c:set var="email" value="${cus.email}"/>
+					<c:set var="phone" value="${cus.phone}"/>
+					<c:set var="username" value="${cus.username}"/>
+					<c:set var="password" value="${cus.password}"/>
+					
+					
+					
+					<c:url value="updatecustomer.jsp" var="cusupdate">
+	
+						<c:param name="id" value="${id}"/>
+						<c:param name="email" value="${email}"/>
+						<c:param name="phone" value="${phone}"/>
+						<c:param name="username" value="${username}"/>
+						<c:param name="password" value="${password}"/>
+					</c:url>
+					<br><br>
+					<a href="${cusupdate}">
+					<input type="button" name="update-btn" value="Update My data">
+					</a>	
+					<br>
+					<br>
+	
+				<c:url value="deletecustomer.jsp" var="cusdelete">
+	
+				<c:param name="id" value="${id}"/>
+				<c:param name="email" value="${email}"/>
+				<c:param name="phone" value="${phone}"/>
+				<c:param name="username" value="${username}"/>
+				<c:param name="password" value="${password}"/>
+			</c:url>
+	
+			<a href="${cusdelete}">
+			<input type="button" name="del-btn" value="Delete My Account">
+			</a>
+		</c:forEach>
+                
+                
+                
+                
+                
                 <h5 class="my-3">John Smith</h5>
                 <p class="text-muted mb-1">Full Stack Developer</p>
                 <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
@@ -73,7 +119,7 @@
           <div class="col-lg-8">
             <div class="card mb-4">
               <div class="card-body">
-                <form action="">
+                <form action="update">
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-sm-3">
@@ -170,6 +216,7 @@
                       </div>
                     </div>
                   </div>
+                  
                 </form>
               </div>
             </div>
