@@ -20,6 +20,7 @@ public class DeleteDetailsServlet extends HttpServlet {
 		boolean result = service.deleteDetails(id, uname);
 		
 		if(result == true) {
+			//redirrect to signup page
 			RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
 			rd.forward(request, response);
 		}else {

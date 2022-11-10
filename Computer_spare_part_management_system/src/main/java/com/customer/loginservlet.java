@@ -18,7 +18,7 @@ public class loginservlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		//create session object 
 		HttpSession session = request.getSession();
 
 		
@@ -31,13 +31,18 @@ public class loginservlet extends HttpServlet {
 		if(isTrue == true) {
 			
 				List<Customer>  cusDetails = cusdb.validate(username, password); 
+				
+				//set sessions
 				request.setAttribute("cusDetails", cusDetails);
 				session.setAttribute("username", username);
+				
 				RequestDispatcher dis = request.getRequestDispatcher("userprofile.jsp");
 				dis.forward(request, response);
 			
 		}
 		else {
+			
+			//store false to display sweet alert in login with js validation
 			request.setAttribute("checkLogin", "False");
 			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 			dis.forward(request, response);

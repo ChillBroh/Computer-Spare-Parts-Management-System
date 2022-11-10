@@ -10,6 +10,7 @@ public class Customer {
 		private String password;
 		private String type;
 		
+		//parameterized constructor created
 		public Customer(int id, String fname,String lname, String username, String email, String phone, String password,String type) {
 			this.id = id;
 			this.fname = fname;
@@ -21,7 +22,8 @@ public class Customer {
 			this.username = username;
 			
 		}
-
+		
+		//assign values using getters
 		public int getId() {
 			return id;
 		}

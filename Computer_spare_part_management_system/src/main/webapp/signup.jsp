@@ -7,8 +7,8 @@
     <title>Signup Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-    <!--add title bar icon-->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+   <!--add title bar icon-->
+    <link rel="icon" href="images/white.ico" type="image/x-icon" />
     
     <!--Bootstrap css-->
     <link
