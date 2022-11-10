@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/login")
@@ -28,16 +27,12 @@ public class loginservlet extends HttpServlet {
 		boolean isTrue = cusdb.validatenew(username, password);
 		
 		if(isTrue == true) {
-			try {
+			
 				List<Customer>  cusDetails = cusdb.validate(username, password); 
 				request.setAttribute("cusDetails", cusDetails);
-				
-				RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("userprofile.jsp");
 				dis.forward(request, response);
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+			
 		}
 		else {
 			request.setAttribute("checkLogin", "False");

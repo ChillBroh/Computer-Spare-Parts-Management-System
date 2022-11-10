@@ -195,7 +195,7 @@ public List<Customer> validate(String userName, String password){
 				String phone = rs.getString(6);
 				String pass = rs.getString(7);
 				String type = rs.getString(8);
-				
+				System.out.println(uname);
 				Customer c = new Customer(uid, fname, lname, uname, email, phone, pass, type);
 				cus.add(c);
 				

@@ -18,6 +18,8 @@ public class Customer {
 			this.phone = phone;
 			this.password = password;
 			this.type = type;
+			this.username = username;
+			
 		}
 
 		public int getId() {

@@ -62,21 +62,16 @@
                 <c:forEach var="cus" items="${cusDetails}"> 
 	
 					<c:set var="id" value="${cus.id}"/>
+					<c:set var="fname" value="${cus.fname}"/>
+					<c:set var="lname" value="${cus.lname}"/>
 					<c:set var="email" value="${cus.email}"/>
-					<c:set var="phone" value="${cus.phone}"/>
 					<c:set var="username" value="${cus.username}"/>
-					<c:set var="password" value="${cus.password}"/>
+					<c:set var="phone" value="${cus.phone}"/>
+					<c:set var="type" value="${cus.type}"/>
 					
 					
 					
-					<c:url value="updatecustomer.jsp" var="cusupdate">
-	
-						<c:param name="id" value="${id}"/>
-						<c:param name="email" value="${email}"/>
-						<c:param name="phone" value="${phone}"/>
-						<c:param name="username" value="${username}"/>
-						<c:param name="password" value="${password}"/>
-					</c:url>
+					
 					<br><br>
 					<a href="${cusupdate}">
 					<input type="button" name="update-btn" value="Update My data">
@@ -84,7 +79,36 @@
 					<br>
 					<br>
 	
-				<c:url value="deletecustomer.jsp" var="cusdelete">
+				
+		</c:forEach>
+                
+                
+                
+                
+                
+                <h5 class="my-3">John Smith</h5>
+                <p class="text-muted mb-1">Full Stack Developer</p>
+                <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                <div class="d-flex justify-content-center mb-2">
+                  <!-- <button type="button" class="btn btn-primary">
+                    Update Account
+                  </button> -->
+                  <c:url value="updatecustomer.jsp" var="cusupdate">
+	
+						<c:param name="id" value="${id}"/>
+						<c:param name="email" value="${email}"/>
+						<c:param name="phone" value="${phone}"/>
+						<c:param name="username" value="${username}"/>
+						<c:param name="password" value="${password}"/>
+					</c:url>
+                  <a href="${cusupdate}">
+					<input type="button" name="update-btn" value="Update My data">
+					</a>
+                  <!-- <button type="button" class="btn btn-danger ms-1">
+                    Delete Account
+                  </button> -->
+                  
+                  <c:url value="deletecustomer.jsp" var="cusdelete">
 	
 				<c:param name="id" value="${id}"/>
 				<c:param name="email" value="${email}"/>
@@ -96,22 +120,7 @@
 			<a href="${cusdelete}">
 			<input type="button" name="del-btn" value="Delete My Account">
 			</a>
-		</c:forEach>
-                
-                
-                
-                
-                
-                <h5 class="my-3">John Smith</h5>
-                <p class="text-muted mb-1">Full Stack Developer</p>
-                <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
-                <div class="d-flex justify-content-center mb-2">
-                  <button type="button" class="btn btn-primary">
-                    Update Account
-                  </button>
-                  <button type="button" class="btn btn-danger ms-1">
-                    Delete Account
-                  </button>
+                  
                 </div>
               </div>
             </div>
@@ -119,7 +128,7 @@
           <div class="col-lg-8">
             <div class="card mb-4">
               <div class="card-body">
-                <form action="update">
+                
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-sm-3">
@@ -129,8 +138,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="First name"
-                          
+                          placeholder="${fname}"
+                          readonly
                           name="fname"
                         />
                       </div>
@@ -138,8 +147,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="Last name"
-                          
+                          placeholder="${lname}"
+                          readonly
                           name="lname"
                         />
                       </div>
@@ -155,9 +164,10 @@
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="Email"
-                         
+                          placeholder="${email}"
+                         readonly
                           name="email"
+                          readonly
                         />
                       </div>
                     </div>
@@ -172,8 +182,8 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="User Name"
-                          
+                          placeholder="${username}"
+                          readonly
                           name="uname"
                         />
                       </div>
@@ -189,9 +199,9 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="Phone Number"
+                          placeholder="${phone}"
                           name="phone"
-                          
+                          readonly
                         />
                       </div>
                       
@@ -207,9 +217,9 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="User Type"
+                          placeholder="${type}"
                           name="type"
-                        
+                        readonly
                         />
                       </div>
                      
@@ -217,7 +227,7 @@
                     </div>
                   </div>
                   
-                </form>
+              
               </div>
             </div>
           </div>
