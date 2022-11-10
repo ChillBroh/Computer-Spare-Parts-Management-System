@@ -72,13 +72,12 @@
 	
 	
 				
-		</c:forEach>
-                
-                
-                
-                
-                
-               
+		
+            
+             <h5 class="my-3">John Smith</h5>
+                <p class="text-muted mb-1">Full Stack Developer</p>
+                <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+              
                   <!-- <button type="button" class="btn btn-primary">
                     Update Account
                   </button> -->
@@ -113,6 +112,7 @@
 			<a href="${cusdelete}">
 			<input type="button" name="del-btn" value="Delete My Account" class="btn btn-danger">
 			</a>
+			</c:forEach>
                   
                 </div>
               </div>

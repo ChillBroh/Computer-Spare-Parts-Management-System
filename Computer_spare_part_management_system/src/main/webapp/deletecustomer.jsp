@@ -65,7 +65,7 @@
 					<div class="card mb-4">
 						<div class="card-body">
 
-							<form action="updatedetails" method="post">
+							<form action="deletedetails" method="post">
 								<%
 								String id = request.getParameter("id");
 								String fname = request.getParameter("fname");
@@ -84,12 +84,12 @@
 										<div class="col">
 										<input type="hidden" name="id" value="<%=id %>">
 											<input type="text" class="form-control" value="<%=fname%>"
-												name="fname" />
+												name="fname" readonly/>
 												
 										</div>
 										<div class="col">
 											<input type="text" class="form-control" value="<%=lname%>"
-												name="lname" />
+												name="lname" readonly/>
 										</div>
 									</div>
 								</div>
@@ -101,7 +101,7 @@
 										</div>
 										<div class="col">
 											<input type="email" class="form-control" value="<%=email%>"
-												name="email" />
+												name="email" readonly/>
 										</div>
 									</div>
 								</div>
@@ -113,7 +113,7 @@
 										</div>
 										<div class="col">
 											<input type="text" class="form-control" value="<%=uname%>"
-												name="uname" />
+												name="uname" readonly/>
 										</div>
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 											<label for="phone">Phone</label>
 										</div>
 										<div class="col">
-											<input type="text" class="form-control" name="phone"
+											<input type="text" class="form-control" name="phone" readonly
 												value="<%=phone%>" />
 										</div>
 
@@ -137,14 +137,14 @@
 											<label for="type">type</label>
 										</div>
 										<div class="col">
-											<input type="text" class="form-control" name="type"
+											<input type="text" class="form-control" name="type" readonly
 												value="<%=type%>" />
 										</div>
 
 									</div>
 								</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Update
+						<button type="submit" class="btn btn-primary">Delete
 							Account</button>
 						</form>
 

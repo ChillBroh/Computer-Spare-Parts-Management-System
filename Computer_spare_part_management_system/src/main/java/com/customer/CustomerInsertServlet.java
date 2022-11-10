@@ -19,6 +19,7 @@ public class CustomerInsertServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String phone = request.getParameter("phone");
 		
 		
 		CustomerDBUtill cusdb = new CustomerDBUtill();	
@@ -26,7 +27,7 @@ public class CustomerInsertServlet extends HttpServlet {
 		boolean check = cusdb.userAlreadyExsist(username);
 		if(check == false) {
 			
-			boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, email, password,"user");
+			boolean isTrue = cusdb.insertUser(0, fname, lname, username, email, phone, password,"user");
 				
 				if(isTrue == true) {
 					RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
