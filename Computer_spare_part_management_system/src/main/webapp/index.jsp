@@ -91,7 +91,7 @@
                     <a href="#contact">Contact</a>
                   </li>
                   <li>
-                    <a href="#services"
+                    <a href="userprofile.jsp"
                       ><button
                         id="username-btn"
                         class="uk-button uk-button-secondary uk-button-medium"
